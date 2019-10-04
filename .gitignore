@@ -1,6 +1,8 @@
 # Compiled class file
 *.class
 
+#InteliJ
+Library/.idea
 # Log file
 *.log
 
