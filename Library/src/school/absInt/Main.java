@@ -5,7 +5,21 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Library lib = new Library("Nase knihiovna");
-        Magasine m = new Magasine("Name", "Author", 666, 843,   100, 2008);
 
+        lib.addItem(1);
+        lib.addItem(3);
+
+        System.out.println(lib);
+
+        lib.showInventory(1);
+
+        lib.showBook(0);
+
+        lib.addItem(2);
+        lib.addItem(3);
+
+        lib.lendBook("RUR","Karel Čapek");
+
+        lib.showBook(0);
     }
 }

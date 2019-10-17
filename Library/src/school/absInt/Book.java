@@ -18,13 +18,25 @@ public class Book extends Template implements Repair {
         this.lended = false; // Bude vždy false ,protože když přidáme knížku tak ještě není přece půjčena
     }
     public void repairProduct(){
-        this.durability = 100;
+        this.durability += 20;
+        if(this.durability > 100){
+            this.durability = 100;
+        }
         System.out.println("Book was repaired");
     }
     public boolean checkProduct(){
         return durability > 0;
     }
-    public boolean getlended(){
-        return this.lended;
+
+    @Override
+    public String toString() {
+        return  "\n===============================================================" +
+                "\nKniha " + name +
+                "\nAutor: " + author +
+                "\nRok vydání: " + year +
+                "\nPočet stran: " + pages +
+                "\nStav(%): " + durability + "%" +
+                "\nPujčena: " + lended +
+                "\n===============================================================";
     }
 }

@@ -30,6 +30,17 @@ public class Library implements Lend{
                 "\n===============================================================";
     }
     public boolean returnBook(String name, String author) {
+        /*  Zadávání operandů ručně
+        String name;
+        String author;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Zadej název knihy: ");
+        name = input.next();
+
+        System.out.println("Zadej jméno autora: ");
+        author = input.next();
+        */
         for (Book book : this.invOfBooks) {
             if (name == book.name && author == book.author) {
                 if (book.lended) {
@@ -40,7 +51,19 @@ public class Library implements Lend{
         }
         return false;
     }
+
     public boolean returnMagasine(String name, String author) {
+        /*  Zadávání operandů ručně
+        String name;
+        String author;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Zadej název knihy: ");
+        name = input.next();
+
+        System.out.println("Zadej jméno autora: ");
+        author = input.next();
+        */
         for (Magasine magasine : this.invOfMagasines) {
             if (name == magasine.name && author == magasine.author) {
                 if (magasine.lended) {
@@ -52,6 +75,17 @@ public class Library implements Lend{
         return false;
     }
     public boolean returnDiary(String name, String author) {
+        /*  Zadávání operandů ručně
+        String name;
+        String author;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Zadej název knihy: ");
+        name = input.next();
+
+        System.out.println("Zadej jméno autora: ");
+        author = input.next();
+        */
         for (Diary diary : this.invOfDiaries) {
             if (name == diary.name && author == diary.author) {
                 if (diary.lended) {
@@ -63,6 +97,17 @@ public class Library implements Lend{
         return false;
     }
     public boolean lendBook(String name, String author) {
+        /*  Zadávání operandů ručně
+        String name;
+        String author;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Zadej název knihy: ");
+        name = input.next();
+
+        System.out.println("Zadej jméno autora: ");
+        author = input.next();
+        */
         for (Book book : this.invOfBooks) {
             if (name == book.name && author == book.author) {
                 if (!book.lended) {
@@ -74,6 +119,17 @@ public class Library implements Lend{
         return false;
     }
     public boolean lendMagasine(String name, String author) {
+        /*  Zadávání operandů ručně
+        String name;
+        String author;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Zadej název knihy: ");
+        name = input.next();
+
+        System.out.println("Zadej jméno autora: ");
+        author = input.next();
+        */
         for (Magasine magasine : this.invOfMagasines) {
             if (name == magasine.name && author == magasine.author) {
                 if (!magasine.lended) {
@@ -85,6 +141,17 @@ public class Library implements Lend{
         return false;
     }
     public boolean lendDiary(String name, String author) {
+        /*  Zadávání operandů ručně
+        String name;
+        String author;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Zadej název knihy: ");
+        name = input.next();
+
+        System.out.println("Zadej jméno autora: ");
+        author = input.next();
+        */
         for (Diary diary : this.invOfDiaries) {
             if (name == diary.name && author == diary.author) {
                 if (!diary.lended) {
@@ -95,6 +162,7 @@ public class Library implements Lend{
         }
         return false;
     }
+
     // 1. Book
     // 2. Magasine
     // 3. Diary
@@ -290,6 +358,22 @@ public class Library implements Lend{
 
     public boolean lendProduct(String name, String author, String type) {
         boolean answ = false;
+
+        /* Zadávání operandů ručně
+        String name;
+        String author;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Zadej název knihy: ");
+        name = input.next();
+
+        System.out.println("Zadej jméno autora: ");
+        author = input.next();
+
+        System.out.println("Zadej typ produktu: ");
+        type = input.next();
+        */
+
         switch (type){
             case "book":
                 answ = lendBook(name, author);
