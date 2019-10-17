@@ -54,6 +54,18 @@ public class Library implements Lend{
         }
     }
 
+    public void showBook(int id){
+        System.out.println(invOfBooks.get(id));
+    }
+
+    public void showMagasine(int id){
+        System.out.println(invOfMagasines.get(id));
+    }
+
+    public void showDiary(int id){
+        System.out.println(invOfDiaries.get(id));
+    }
+
     // 1. Book
     // 2. Magasine
     // 3. Diary
