@@ -2,12 +2,12 @@ package school.absInt;
 
 public class Book extends Template implements Repair {
 
-    private String name;
-    private String author;
-    private int pages;
+    String name;
+    String author;
+    int pages;
     private int durability;
-    private int year;
-    private boolean lended;
+    int year;
+    boolean lended;
 
     public Book(String name, String author, int pages, int durability, int year) {
         this.name = name;
@@ -16,5 +16,15 @@ public class Book extends Template implements Repair {
         this.durability = durability;
         this.year = year;
         this.lended = false; // Bude vždy false ,protože když přidáme knížku tak ještě není přece půjčena
+    }
+    public void repairProduct(){
+        this.durability = 100;
+        System.out.println("Book was repaired");
+    }
+    public boolean checkProduct(){
+        return durability > 0;
+    }
+    public boolean getlended(){
+        return this.lended;
     }
 }

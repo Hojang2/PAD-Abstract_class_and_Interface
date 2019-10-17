@@ -11,13 +11,14 @@ public class Library implements Lend{
     List<Magasine> invOfMagasines = new ArrayList<Magasine>();
     List<Diary> invOfDiaries = new ArrayList<Diary>();
 
-    private String nameOfLibrary;
+    private final String nameOfLibrary;
 
     public Library(String nameOfLibrary) {
         this.nameOfLibrary = nameOfLibrary;
         System.out.println("Byla vytvořena knihovna " + nameOfLibrary);
         System.out.println("===============================================================");
     }
+
 
     @Override
     public String toString() {
@@ -28,7 +29,72 @@ public class Library implements Lend{
                 "\nPočet Diářu: " + invOfDiaries +
                 "\n===============================================================";
     }
-
+    public boolean returnBook(String name, String author) {
+        for (Book book : this.invOfBooks) {
+            if (name == book.name && author == book.author) {
+                if (book.lended) {
+                    book.lended = false;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean returnMagasine(String name, String author) {
+        for (Magasine magasine : this.invOfMagasines) {
+            if (name == magasine.name && author == magasine.author) {
+                if (magasine.lended) {
+                    magasine.lended = false;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean returnDiary(String name, String author) {
+        for (Diary diary : this.invOfDiaries) {
+            if (name == diary.name && author == diary.author) {
+                if (diary.lended) {
+                    diary.lended = false;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean lendBook(String name, String author) {
+        for (Book book : this.invOfBooks) {
+            if (name == book.name && author == book.author) {
+                if (!book.lended) {
+                    book.lended = true;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean lendMagasine(String name, String author) {
+        for (Magasine magasine : this.invOfMagasines) {
+            if (name == magasine.name && author == magasine.author) {
+                if (!magasine.lended) {
+                    magasine.lended = true;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean lendDiary(String name, String author) {
+        for (Diary diary : this.invOfDiaries) {
+            if (name == diary.name && author == diary.author) {
+                if (!diary.lended) {
+                    diary.lended = true;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     // 1. Book
     // 2. Magasine
     // 3. Diary
@@ -221,4 +287,36 @@ public class Library implements Lend{
     public List<Diary> getInvOfDiaries() {
         return invOfDiaries;
     }
+
+    public boolean lendProduct(String name, String author, String type) {
+        boolean answ = false;
+        switch (type){
+            case "book":
+                answ = lendBook(name, author);
+                break;
+            case "magasine":
+                answ = lendMagasine(name, author);
+                break;
+            case "diary":
+                answ = lendDiary(name, author);
+                break;
+        }
+        return answ;
+    }
+    public boolean returnProduct(String name, String author, String type) {
+        boolean answ = false;
+        switch (type){
+            case "book":
+                answ = returnBook(name, author);
+                break;
+            case "magasine":
+                answ = returnMagasine(name, author);
+                break;
+            case "diary":
+                answ = returnDiary(name, author);
+                break;
+        }
+        return answ;
+    }
+
 }

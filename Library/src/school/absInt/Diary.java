@@ -1,11 +1,11 @@
 package school.absInt;
 
 public class Diary extends Template implements Repair {
-    private String name;
-    private String author;
-    private int pages;
+    String name;
+    String author;
+    int pages;
     private int durability;
-    private boolean lended;
+    boolean lended;
 
     public Diary(String name, String author, int pages, int durability) {
         this.name = name;
@@ -13,5 +13,12 @@ public class Diary extends Template implements Repair {
         this.pages = pages;
         this.durability = durability;
         this.lended = false;
+    }
+    public void repairProduct(){
+        this.durability = 100;
+        System.out.println("Diary was repaired");
+    }
+    public boolean checkProduct(){
+        return durability > 0;
     }
 }
