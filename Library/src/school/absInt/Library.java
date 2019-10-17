@@ -95,9 +95,12 @@ public class Library implements Lend{
         System.out.println("Zadejte počet stran: ");
         pages = input.nextInt();
 
-        System.out.println("Zadejte v jakém stavu je kniha: ");
-        durability = input.nextInt();
-        System.out.print("%");
+        durability = 0;
+        while(durability<=0 && durability>100) {
+            System.out.println("Zadejte v jakém stavu je kniha(max 100): ");
+            durability = input.nextInt();
+            System.out.print("%");
+        }
 
         Book kniha = new Book(name, author, pages, durability, year);
         invOfBooks.add(kniha);
@@ -137,9 +140,13 @@ public class Library implements Lend{
         System.out.println("Zadejte počet stran: ");
         pages = input.nextInt();
 
-        System.out.println("Zadejte v jakém stavu je časopis: ");
-        durability = input.nextInt();
-        System.out.print("%");
+        durability = 0;
+        while(durability<=0 && durability>100) {
+            System.out.println("Zadejte v jakém stavu je časopis(max 100): ");
+            durability = input.nextInt();
+            System.out.print("%");
+        }
+
 
         Magasine casopis = new Magasine(name, author, cislo, pages, durability, year);
         invOfMagasines.add(casopis);
@@ -172,9 +179,13 @@ public class Library implements Lend{
         System.out.println("Zadejte počet stran: ");
         pages = input.nextInt();
 
-        System.out.println("Zadejte v jakém stavu je diář: ");
-        durability = input.nextInt();
-        System.out.print("%");
+        durability = 0;
+        while(durability<=0 && durability>100) {
+            System.out.println("Zadejte v jakém stavu je diář(max 100): ");
+            durability = input.nextInt();
+            System.out.print("%");
+        }
+
 
         Diary diar = new Diary(name, author, pages, durability);
         invOfDiaries.add(diar);
