@@ -32,6 +32,28 @@ public class Library implements Lend{
     // 1. Book
     // 2. Magasine
     // 3. Diary
+    public void showInventory(int Type){
+        switch (Type){
+            case 1:
+                System.out.println("\n===============================================================");
+                System.out.println("Inventář knih: " + getInvOfBooks());
+                break;
+
+            case 2:
+                System.out.println("\n===============================================================");
+                System.out.println("Inventář časopisů: " + getInvOfBooks());
+                break;
+
+            case 3:
+                System.out.println("\n===============================================================");
+                System.out.println("Inventář diářů: " + getInvOfBooks());
+                break;
+        }
+    }
+
+    // 1. Book
+    // 2. Magasine
+    // 3. Diary
     public void addItem(int Type){
         switch (Type){
             case 1:
@@ -160,5 +182,17 @@ public class Library implements Lend{
         System.out.println("Počet stran: " + pages);
         System.out.println("Stav(v %): " + durability);
         System.out.println("/n===============================================================");
+    }
+
+    public List<Book> getInvOfBooks() {
+        return invOfBooks;
+    }
+
+    public List<Magasine> getInvOfMagasines() {
+        return invOfMagasines;
+    }
+
+    public List<Diary> getInvOfDiaries() {
+        return invOfDiaries;
     }
 }
