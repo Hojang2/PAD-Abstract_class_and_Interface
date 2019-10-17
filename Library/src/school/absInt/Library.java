@@ -1,5 +1,5 @@
 package school.absInt;
 
 
-public class Library {
+public class Library implements  Lend{
 }
