@@ -37,16 +37,19 @@ public class Library implements Lend{
             case 1:
                 System.out.println("\n===============================================================");
                 System.out.println("Inventář knih: " + getInvOfBooks());
+                System.out.println("===============================================================");
                 break;
 
             case 2:
                 System.out.println("\n===============================================================");
                 System.out.println("Inventář časopisů: " + getInvOfBooks());
+                System.out.println("===============================================================");
                 break;
 
             case 3:
                 System.out.println("\n===============================================================");
                 System.out.println("Inventář diářů: " + getInvOfBooks());
+                System.out.println("===============================================================");
                 break;
         }
     }
