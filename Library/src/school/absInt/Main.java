@@ -18,7 +18,7 @@ public class Main {
         lib.addItem(2);
         lib.addItem(3);
 
-        lib.lendBook("RUR","Karel Čapek");
+        lib.lendBook("RUR","Karel_Čapek");
 
         lib.showBook(0);
     }

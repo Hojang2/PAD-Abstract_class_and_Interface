@@ -221,7 +221,7 @@ public class Library implements Lend{
 
     private void addBook(){
         String name;
-        String author;
+        String author = "";
         int pages;
         int durability;
         int year;
