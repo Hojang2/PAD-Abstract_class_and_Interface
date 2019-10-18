@@ -242,7 +242,7 @@ public class Library implements Lend{
         pages = input.nextInt();
 
         durability = 0;
-        while(durability<=0 && durability>100) {
+        while(durability<=0 || durability>100) {
             System.out.println("Zadejte v jakém stavu je kniha(max 100): ");
             durability = input.nextInt();
             System.out.print("%");
@@ -287,7 +287,7 @@ public class Library implements Lend{
         pages = input.nextInt();
 
         durability = 0;
-        while(durability<=0 && durability>100) {
+        while(durability<=0 || durability>100) {
             System.out.println("Zadejte v jakém stavu je časopis(max 100): ");
             durability = input.nextInt();
             System.out.print("%");
