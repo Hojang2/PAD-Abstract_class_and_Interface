@@ -16,7 +16,7 @@ public class Diary extends Template implements Repair {
     }
 
     public void repairProduct(){
-        this.durability += 20;
+        this.durability += 10;
         if(this.durability > 100){
             this.durability = 100;
         }

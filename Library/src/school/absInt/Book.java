@@ -18,7 +18,7 @@ public class Book extends Template implements Repair {
         this.lended = false; // Bude vždy false ,protože když přidáme knížku tak ještě není přece půjčena
     }
     public void repairProduct(){
-        this.durability += 20;
+        this.durability += 30;
         if(this.durability > 100){
             this.durability = 100;
         }
