@@ -227,7 +227,7 @@ public class Library implements Lend{
         int year;
         Scanner input = new Scanner(System.in);
 
-        System.out.println("/n===============================================================");
+        System.out.println("\n===============================================================");
 
         System.out.println("Zadejte název knihy: ");
         name = input.next();
@@ -251,13 +251,13 @@ public class Library implements Lend{
         Book kniha = new Book(name, author, pages, durability, year);
         invOfBooks.add(kniha);
 
-        System.out.println("===============================================================/n");
+        System.out.println("===============================================================\n");
         System.out.println("Byla přidána kniha " + name);
         System.out.println("Autor: " + author);
         System.out.println("Rok: " + year);
         System.out.println("Počet stran: " + pages);
         System.out.println("Stav(v %): " + durability);
-        System.out.println("/n===============================================================");
+        System.out.println("\n===============================================================");
     }
 
     private void addMagasine(){
@@ -269,7 +269,7 @@ public class Library implements Lend{
         int year;
         Scanner input = new Scanner(System.in);
 
-        System.out.println("/n===============================================================");
+        System.out.println("\n===============================================================");
 
         System.out.println("Zadejte název časopisu: ");
         name = input.next();
@@ -297,14 +297,14 @@ public class Library implements Lend{
         Magasine casopis = new Magasine(name, author, cislo, pages, durability, year);
         invOfMagasines.add(casopis);
 
-        System.out.println("===============================================================/n");
+        System.out.println("===============================================================\n");
         System.out.println("Byl přidán časopis " + name);
         System.out.print(" č. " + cislo);
         System.out.println("Nakldatelství: " + author);
         System.out.println("Rok: " + year);
         System.out.println("Počet stran: " + pages);
         System.out.println("Stav(v %): " + durability);
-        System.out.println("/n===============================================================");
+        System.out.println("\n===============================================================");
     }
 
     private void addDiary(){
@@ -314,7 +314,7 @@ public class Library implements Lend{
         int durability;
         Scanner input = new Scanner(System.in);
 
-        System.out.println("/n===============================================================");
+        System.out.println("\n===============================================================");
 
         System.out.println("Zadejte název diáře: ");
         name = input.next();
@@ -326,7 +326,7 @@ public class Library implements Lend{
         pages = input.nextInt();
 
         durability = 0;
-        while(durability<=0 && durability>100) {
+        while(durability<=0 || durability>100) {
             System.out.println("Zadejte v jakém stavu je diář(max 100): ");
             durability = input.nextInt();
             System.out.print("%");
@@ -336,12 +336,12 @@ public class Library implements Lend{
         Diary diar = new Diary(name, author, pages, durability);
         invOfDiaries.add(diar);
 
-        System.out.println("===============================================================/n");
+        System.out.println("===============================================================\n");
         System.out.println("Byl přidán diář " + name);
         System.out.println("Autor: " + author);
         System.out.println("Počet stran: " + pages);
         System.out.println("Stav(v %): " + durability);
-        System.out.println("/n===============================================================");
+        System.out.println("\n===============================================================");
     }
 
     public List<Book> getInvOfBooks() {
