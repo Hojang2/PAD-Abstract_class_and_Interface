@@ -1,40 +1,40 @@
 package school.absInt;
 
-public class Diary extends Template implements Repair {
-    String name;
-    String author;
-    int pages;
-    private int durability;
-    boolean lended;
+public class Diary extends Template {
+    private int maxDurability;
+    private int minDurability;
 
-    public Diary(String name, String author, int pages, int durability) {
-        this.name = name;
-        this.author = author;
-        this.pages = pages;
-        this.durability = durability;
-        this.lended = false;
+    public Diary(String name, String author, int pages, String ISBN, int durability){
+        super(name, author, pages, ISBN, durability);
+        this.maxDurability = 100;
+        this.minDurability = 0;
     }
 
     public void repairProduct(){
-        this.durability += 10;
-        if(this.durability > 100){
-            this.durability = 100;
+
+        if (this.durability <= this.maxDurability - 20){
+            this.durability += 20;
+        } else {
+            this.durability += this.maxDurability - this.durability;
         }
-        System.out.println("Diary was repaired");
+        System.out.println("Magasine was repaired");
     }
 
     public boolean checkProduct(){
-        return durability > 0;
+        return this.durability > minDurability;
     }
 
-    @Override
-    public String toString() {
-        return  "\n===============================================================" +
-                "\nDiář " + name +
-                "\nAutor: " + author +
-                "\nPočet stran: " + pages +
-                "\nStav(%): " + durability + "%" +
-                "\nPujčena: " + lended +
-                "\n===============================================================";
+    public boolean lendProduct(){
+        if (this.checkProduct()){
+            this.durability -= 10;
+            return true;
+        } else {
+            System.out.println("This Diary is broken, you can't lend it.");
+            return false;
+        }
+    }
+    public boolean returnProduct(){
+        System.out.println(String.format("Product %s was returned", this.name));
+        return true;
     }
 }

@@ -1,42 +1,41 @@
 package school.absInt;
 
-public class Book extends Template implements Repair {
+public class Book extends Template {
 
-    String name;
-    String author;
-    int pages;
-    private int durability;
-    int year;
-    boolean lended;
+    private int maxDurability;
+    private int minDurability;
 
-    public Book(String name, String author, int pages, int durability, int year) {
-        this.name = name;
-        this.author = author;
-        this.pages = pages;
-        this.durability = durability;
-        this.year = year;
-        this.lended = false; // Bude vždy false ,protože když přidáme knížku tak ještě není přece půjčena
+    public Book(String name, String author, int pages, String ISBN, int durability){
+        super(name, author, pages, ISBN, durability);
+        this.maxDurability = 150;
+        this.minDurability = 0;
     }
+
     public void repairProduct(){
-        this.durability += 30;
-        if(this.durability > 100){
-            this.durability = 100;
+
+        if (this.durability <= this.maxDurability - 30){
+            this.durability += 30;
+        } else {
+            this.durability += this.maxDurability - this.durability;
         }
-        System.out.println("Book was repaired");
-    }
-    public boolean checkProduct(){
-        return durability > 0;
+        System.out.println("Magasine was repaired");
     }
 
-    @Override
-    public String toString() {
-        return  "\n===============================================================" +
-                "\nKniha " + name +
-                "\nAutor: " + author +
-                "\nRok vydání: " + year +
-                "\nPočet stran: " + pages +
-                "\nStav(%): " + durability + "%" +
-                "\nPujčena: " + lended +
-                "\n===============================================================";
+    public boolean checkProduct(){
+        return this.durability > minDurability;
+    }
+
+    public boolean lendProduct(){
+        if (this.checkProduct()){
+            this.durability -= 20;
+            return true;
+        } else {
+            System.out.println("This Book is broken, you can't lend it.");
+            return false;
+        }
+    }
+    public boolean returnProduct(){
+        System.out.println(String.format("Product %s was returned", this.name));
+        return true;
     }
 }

@@ -3,20 +3,31 @@ package school.absInt;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        Library lib = new Library("Nase knihiovna");
+        Library lib = new Library("My Library");
 
-        lib.addItem(1);
-        lib.addItem(3);
+        Reader r1 = new Reader("Tom");
+        Reader r2 = new Reader("Adam");
+        lib.addReader(r1);
+        lib.addReader(r2);
 
-        System.out.println(lib);
+        Magasine m = new Magasine("Computer", "Computer Press", 148, "1210-8790", 70);
+        Book b = new Book("Hobit", "J.R.R. Tolkien", 300, "978-80-257-1949-7", 40);
 
-        lib.showInventory(1);
+        lib.addPublication(m);
+        lib.addPublication(b);
+        lib.addPublication(b);
+        System.out.println(lib.getAvalible());
 
-        lib.showBook(0);
+        lib.lendProduct(r1, "1210-8790");
+        lib.lendProduct(r2, "1210-8790");
+        lib.lendProduct(r1, "978-80-257-1949-7");
+        System.out.println(lib.getAvalible());
 
-        lib.lendBook("RUR","Karel_Čapek");
+        lib.returnProduct(r1, "1210-8790");
+        lib.returnProduct(r2, "978-80-257-1949-7");
+        System.out.println(lib.getAvalible());
 
-        lib.showBook(0);
+        lib.returnProduct(r2, "978-80-257-1949-7");
+        System.out.println(lib.getAvalible());
     }
 }

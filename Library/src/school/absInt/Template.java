@@ -1,10 +1,24 @@
 package school.absInt;
 
-public abstract class Template{
+public abstract class Template implements  Repair, Lend{
+
     protected String name;
     protected String author;
     protected int pages;
-    protected boolean lended;
+    protected String ISBN;
     protected int durability;
+
+    abstract public void repairProduct();
+    abstract public boolean checkProduct();
+    abstract public boolean lendProduct();
+    abstract public boolean returnProduct();
+    public Template(String name, String author, int pages, String ISBN, int durability){
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.ISBN = ISBN;
+        this.durability = durability;
+    }
+
 
 }

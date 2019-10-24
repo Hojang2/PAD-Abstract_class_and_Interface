@@ -1,48 +1,42 @@
 package school.absInt;
 
-public class Magasine extends Template implements Repair {
+public class Magasine extends Template {
 
-    String name;
-    String author;
-    int cislo;
-    int pages;
-    int year;
-    private int durability;
-    boolean lended;
-
-
-    public Magasine(String name, String author, int cislo, int pages, int durability, int year){
-        this.name = name;
-        this.author = author;
-        this.pages = pages;
-        this.cislo = cislo;
-        this.year = year;
-        this.durability = durability;
-        this.lended = false;
+    private int maxDurability;
+    private int minDurability;
+    
+    public Magasine(String name, String author, int pages, String ISBN, int durability){
+        super(name, author, pages, ISBN, durability);
+        this.maxDurability = 100;
+        this.minDurability = 0;
     }
 
     public void repairProduct(){
-        this.durability += 20;
-        if(this.durability > 100){
-            this.durability = 100;
-        }
 
+        if (this.durability <= this.maxDurability - 20){
+            this.durability += 20;
+        } else {
+            this.durability += this.maxDurability - this.durability;
+        }
         System.out.println("Magasine was repaired");
     }
 
     public boolean checkProduct(){
-        return durability > 0;
+        return this.durability > minDurability;
     }
 
-    @Override
-    public String toString() {
-        return  "\n===============================================================" +
-                "\nČasopis " + name + "č. " + cislo +
-                "\nNakladatelství: " + author +
-                "\nRok vydání: " + year +
-                "\nPočet stran: " + pages +
-                "\nStav(%): " + durability + "%" +
-                "\nPujčena: " + lended +
-                "\n===============================================================";
+    public boolean lendProduct(){
+        if (this.checkProduct()){
+            this.durability -= 10;
+            return true;
+        } else {
+            System.out.println("This Magasine is broken, you can't lend it.");
+            return false;
+        }
     }
+    public boolean returnProduct(){
+        System.out.println(String.format("Product %s was returned", this.name));
+        return true;
+    }
+
 }
