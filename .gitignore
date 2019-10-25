@@ -3,6 +3,7 @@
 
 #InteliJ
 Library/.idea
+.idea
 # Log file
 *.log
 
