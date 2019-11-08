@@ -14,6 +14,7 @@ public class Library{
         this.avalible = new ArrayList<Template>();
 
     }
+
     public void addReader(Reader person){
         this.readers.add(person);
     }
@@ -24,10 +25,12 @@ public class Library{
         this.deposite.add(publication);
         this.avalible.add(publication);
     }
+
     public void removePublication(Template publication){
         this.deposite.remove(publication);
         this.avalible.remove(publication);
     }
+
     public void lendProduct(Reader reader, String ISBN){
         for (Template product: this.avalible){
             if (product.ISBN == ISBN){
@@ -38,6 +41,7 @@ public class Library{
             }
         }
     }
+
     public void returnProduct(Reader reader, String ISBN) {
         if (reader.returnProduct(ISBN)) {
             for (Template product : this.deposite) {
@@ -49,6 +53,7 @@ public class Library{
             }
         }
     }
+
     public String getAvalible(){
         String tmp = "";
         for (Template t: this.avalible){

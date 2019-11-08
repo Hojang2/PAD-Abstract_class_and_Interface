@@ -8,7 +8,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class GUI extends Application {
-    private Library Lib;
+    private Library lib;
+    private Button newLib;
 
     public static void main(String[] args) {
         launch(args);
@@ -20,8 +21,19 @@ public class GUI extends Application {
 
         Scene scene = new Scene(root);
 
+        stage.setTitle("Knihovna");
         stage.setScene(scene);
         stage.show();
 
+    }
 
-}}
+    public void changeScene(String sceneName) throws IOException{
+        Parent newSceneFXML = FXMLLoader.load(getClass().getResource(sceneName));
+        Scene newScene = new Scene(newSceneFXML);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
+    }
+}
