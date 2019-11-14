@@ -5,7 +5,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class GUI extends Application {
     private Library lib;
@@ -27,7 +30,7 @@ public class GUI extends Application {
 
     }
 
-    public void changeScene(String sceneName) throws IOException{
+    public void changeScene(String sceneName) throws IOException {
         Parent newSceneFXML = FXMLLoader.load(getClass().getResource(sceneName));
         Scene newScene = new Scene(newSceneFXML);
 

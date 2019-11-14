@@ -20,5 +20,10 @@ public abstract class Template implements  Repair, Lend{
         this.durability = durability;
     }
 
+    @Override
+    public String toString() {
+        return String.format("name: %s author: %s pages: %d durability: %d", name, author, pages, durability);
+    }
+
 
 }

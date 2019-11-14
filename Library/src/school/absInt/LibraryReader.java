@@ -2,13 +2,13 @@ package school.absInt;
 
 import java.util.ArrayList;
 
-public class Reader{
+public class LibraryReader {
     int id;
     static int count = 1;
     private String name;
     private ArrayList<Template> lendedBooks;
 
-    public Reader(String name){
+    public LibraryReader(String name){
         this.id = count;
         this.name = name;
         this.lendedBooks = new ArrayList<Template>();

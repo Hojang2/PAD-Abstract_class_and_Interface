@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Library lib = new Library("My Library");
 
-        Reader r1 = new Reader("Tom");
-        Reader r2 = new Reader("Adam");
+        LibraryReader r1 = new LibraryReader("Tom");
+        LibraryReader r2 = new LibraryReader("Adam");
         lib.addReader(r1);
         lib.addReader(r2);
 
@@ -29,5 +29,8 @@ public class Main {
 
         lib.returnProduct(r2, "978-80-257-1949-7");
         System.out.println(lib.getAvalible());
+
+        lib.serialization("Database");
+        lib.deserialization("Database");
     }
 }
