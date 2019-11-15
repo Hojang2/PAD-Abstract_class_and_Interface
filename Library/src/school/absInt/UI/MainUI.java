@@ -1,4 +1,4 @@
-package school.absInt;
+package school.absInt.UI;
 
 import javafx.application.Application;
 
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class GUI extends Application {
+public class MainUI extends Application {
     private Library lib;
     private Button newLib;
 
