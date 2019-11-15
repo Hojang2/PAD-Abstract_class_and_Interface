@@ -3,7 +3,7 @@ package school.absInt;
 import java.io.*;
 import java.util.ArrayList;
 
-class SerializieLibrary {
+class SerializationLibrary {
 
 
     // serialize the given object and save it to file
@@ -24,7 +24,6 @@ class SerializieLibrary {
         fos.close();
     }
 
-    // deserialize to Object from given file
     public static ArrayList<LibraryReader> deserializeReaders(String fileName) throws IOException, ClassNotFoundException {
         ArrayList<LibraryReader> obj = new ArrayList<LibraryReader>();
         FileInputStream fis = new FileInputStream(fileName);

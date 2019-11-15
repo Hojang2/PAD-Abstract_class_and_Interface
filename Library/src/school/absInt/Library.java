@@ -63,23 +63,23 @@ public class Library implements Serializable{
         }
         return tmp;
     }
-    public void serialization(String fileName){
+    public void serialization(String readersOut, String depositeOut, String avaliableOut){
         try {
-            Lend.SerializationLibrary.serializeReaders(this.readers, fileName);
-            Lend.SerializationLibrary.serializeProducts(this.deposite, fileName);
-            Lend.SerializationLibrary.serializeProducts(this.avalible, fileName);
+            SerializationLibrary.serializeReaders(this.readers, readersOut);
+            SerializationLibrary.serializeProducts(this.deposite, depositeOut);
+            SerializationLibrary.serializeProducts(this.avalible, avaliableOut);
         } catch (IOException e) {
             e.printStackTrace();
             return;
         }
 
     }
-    public void deserialization(String fileName)
+    public void deserialization(String readersSrc, String depositeSrc, String avaliableSrc)
     {
         try {
-            this.readers = Lend.SerializationLibrary.deserializeReaders(fileName);
-            this.deposite = Lend.SerializationLibrary.deserializeProducts(fileName);
-            this.avalible = Lend.SerializationLibrary.deserializeProducts(fileName);
+            this.readers = SerializationLibrary.deserializeReaders(readersSrc);
+            this.deposite = SerializationLibrary.deserializeProducts(depositeSrc);
+            this.avalible = SerializationLibrary.deserializeProducts(avaliableSrc);
         } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
