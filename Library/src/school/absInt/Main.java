@@ -10,10 +10,10 @@ public class Main {
         lib.addReader(r1);
         lib.addReader(r2);
 
-        Magasine m = new Magasine("Computer", "Computer Press", 148, "1210-8790", 70);
+        //Magasine m = new Magasine("Computer", "Computer Press", 148, "1210-8790", 70);
         Book b = new Book("Hobit", "J.R.R. Tolkien", 300, "978-80-257-1949-7", 40);
 
-        lib.addPublication(m);
+        //lib.addPublication(m);
         lib.addPublication(b);
         lib.addPublication(b);
         System.out.println(lib.getAvalible());
@@ -30,7 +30,7 @@ public class Main {
         lib.returnProduct(r2, "978-80-257-1949-7");
         System.out.println(lib.getAvalible());
 
-        lib.serialization("Database");
-        lib.deserialization("Database");
+        lib.serialization("filename1.ser", "filename2.ser", "filename3.ser");
+        lib.deserialization("filename1.ser", "filename2.ser", "filename3.ser");
     }
 }

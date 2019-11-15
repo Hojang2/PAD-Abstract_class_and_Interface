@@ -1,6 +1,8 @@
 package school.absInt;
 
-public abstract class Template implements  Repair, Lend{
+import java.io.Serializable;
+
+public abstract class Template implements  Repair, Lend, Serializable{
 
     protected String name;
     protected String author;

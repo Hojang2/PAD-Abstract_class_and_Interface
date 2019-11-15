@@ -1,8 +1,9 @@
 package school.absInt;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class LibraryReader {
+public class LibraryReader implements Serializable {
     int id;
     static int count = 1;
     private String name;

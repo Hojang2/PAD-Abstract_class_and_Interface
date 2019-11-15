@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainUI extends Application {
-    private Library lib;
     private Button newLib;
 
     public static void main(String[] args) {
@@ -29,7 +28,7 @@ public class MainUI extends Application {
         stage.show();
 
     }
-
+    /*
     public void changeScene(String sceneName) throws IOException {
         Parent newSceneFXML = FXMLLoader.load(getClass().getResource(sceneName));
         Scene newScene = new Scene(newSceneFXML);
@@ -39,4 +38,6 @@ public class MainUI extends Application {
         window.setScene(newScene);
         window.show();
     }
+
+     */
 }

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.io.Serializable;
 
-public class Library implements Serializable{
+public class Library{
     private String name;
     private ArrayList<LibraryReader> readers;
     private ArrayList<Template> deposite;

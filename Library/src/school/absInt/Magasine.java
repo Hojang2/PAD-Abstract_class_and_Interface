@@ -1,6 +1,8 @@
 package school.absInt;
 
-public class Magasine extends Template {
+import java.io.Serializable;
+
+public class Magasine extends Template implements Serializable {
 
     private int maxDurability;
     private int minDurability;

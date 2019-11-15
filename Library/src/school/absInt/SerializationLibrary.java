@@ -30,7 +30,7 @@ class SerializationLibrary {
         ObjectInputStream ois = new ObjectInputStream(fis);
         Object o = null;
         try {
-            for (int i=0; i<10; i++) {
+            while(true) {
                 o = ois.readObject();
                 obj.add((LibraryReader) o);
             }
@@ -46,7 +46,7 @@ class SerializationLibrary {
         ObjectInputStream ois = new ObjectInputStream(fis);
         Object o = null;
         try {
-            for (int i=0; i<10; i++) {
+            while (true){
                 o = ois.readObject();
                 obj.add((Template) o);
             }
