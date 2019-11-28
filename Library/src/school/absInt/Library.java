@@ -63,6 +63,15 @@ public class Library{
         }
         return tmp;
     }
+
+    public String getLen(){
+        String tmp = "";
+        tmp += this.readers.size() + "\n";
+        tmp += this.deposite.size() + "\n";
+        tmp += this.avalible.size() + "\n";
+        return tmp;
+    }
+
     public void serialization(String dirLoc){
         dirLoc += "/" + this.name;
         try {
