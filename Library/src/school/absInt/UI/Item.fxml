@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="school.absInt.UI.NewLib">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="school.absInt.UI.Item">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -27,16 +25,15 @@
             </menus>
         </MenuBar>
     </top>
-    <center>
-
-    </center>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Název Knihovny" />
-            <TextField fx:id="textNameOfLib" alignment="CENTER" minWidth="-Infinity" prefHeight="31.0" prefWidth="250.0" />
-            <Button fx:id="buttonNewLib" mnemonicParsing="false" onAction="#createNewLib" text="Vytvořit knihovnu" />
+            <Label fx:id="labelNameOfBook" layoutX="244.0" layoutY="14.0" text="BookName" />
+            <Label layoutX="152.0" layoutY="62.0" prefHeight="21.0" prefWidth="46.0" text="Autor:" />
+            <Label layoutX="122.0" layoutY="83.0" text="Rok vydání:" />
+            <Label fx:id="labelNameOfAuthor" layoutX="198.0" layoutY="62.0" text="Autorovo jm" />
+            <Label fx:id="labelYaerOfCreation" layoutX="222.0" layoutY="83.0" text="Rok" />
          </children>
-      </VBox>
+      </AnchorPane>
    </center>
 </BorderPane>

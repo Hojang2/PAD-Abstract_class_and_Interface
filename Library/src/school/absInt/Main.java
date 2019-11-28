@@ -1,8 +1,11 @@
 package school.absInt;
 
+import school.absInt.UI.MainMenu;
+
 public class Main {
 
     public static void main(String[] args) {
+/*
         Library lib = new Library("My Library");
 
         LibraryReader r1 = new LibraryReader("Tom");
@@ -32,5 +35,10 @@ public class Main {
 
         lib.serialization("filename1.ser", "filename2.ser", "filename3.ser");
         lib.deserialization("filename1.ser", "filename2.ser", "filename3.ser");
+
+ */
+
     }
+
+
 }

@@ -2,17 +2,26 @@ package school.absInt.UI;
 
 import javafx.application.Application;
 
+import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+import school.absInt.Library;
 
 import java.awt.event.ActionEvent;
-import java.io.IOException;
+import java.io.File;
 
 public class MainMenu extends Application {
-    private Button newLib;
+    @FXML
+    private Button buttonNewLib;
+
+    @FXML
+    private Button buttonLoadLib;
 
     public static void main(String[] args) {
         launch(args);
@@ -29,8 +38,9 @@ public class MainMenu extends Application {
         stage.show();
 
     }
-    /*
-    public void newLibButtonAction(ActionEvent event) throws IOException {
+
+    @FXML
+    private void newLibButton(ActionEvent event) throws Exception{
         Parent newSceneFXML = FXMLLoader.load(getClass().getResource("NewLib.fxml"));
         Scene newScene = new Scene(newSceneFXML);
 
@@ -40,16 +50,39 @@ public class MainMenu extends Application {
         window.show();
     }
 
-     */
-    /*
-    public void loadLibButtonAction(ActionEvent event){
-        Parent newSceneFXML = FXMLLoader(getClass().getResource("Core.fxml"));
-        Scene newScene = new Scene(newSceneFXML);
+    @FXML
+    private void loadLibButton(ActionEvent event) throws Exception{
+        DirectoryChooser dirChooserLoad = new DirectoryChooser();
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        File selectedDirectory = directoryChooser.showDialog(null);
 
-        window.setScene(newScene);
-        window.show();
+        if(selectedDirectory == null){
+            System.out.println("You haven't selected any dir.");
+        }else{
+            String path = selectedDirectory.getAbsolutePath();
+            System.out.println(path);
+            Library lib = new Library(selectedDirectory.getName());
+
+            lib.deserialization(path);
+
+            Parent newSceneFXML = FXMLLoader.load(getClass().getResource("Inventory.fxml"));
+            Scene newScene = new Scene(newSceneFXML);
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(newScene);
+            window.show();
+        }
+/*
+
+
+ */
     }
-     */
+
+
+    @FXML
+    private void closeApp(){
+        Platform.exit();
+    }
 }

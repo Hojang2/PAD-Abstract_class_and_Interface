@@ -63,27 +63,27 @@ public class Library{
         }
         return tmp;
     }
-    public void serialization(String readersOut, String depositeOut, String avaliableOut){
+    public void serialization(String dirLoc){
+        dirLoc += "/" + this.name;
         try {
-            SerializationLibrary.serializeReaders(this.readers, readersOut);
-            SerializationLibrary.serializeProducts(this.deposite, depositeOut);
-            SerializationLibrary.serializeProducts(this.avalible, avaliableOut);
+            SerializationLibrary.serializeReaders(this.readers, dirLoc + "/readers.ser");
+            SerializationLibrary.serializeProducts(this.deposite, dirLoc + "/deposit.ser");
+            SerializationLibrary.serializeProducts(this.avalible, dirLoc + "/avalible.ser");
         } catch (IOException e) {
             e.printStackTrace();
             return;
         }
 
     }
-    public void deserialization(String readersSrc, String depositeSrc, String avaliableSrc)
+    public void deserialization(String dirLoc)
     {
         try {
-            this.readers = SerializationLibrary.deserializeReaders(readersSrc);
-            this.deposite = SerializationLibrary.deserializeProducts(depositeSrc);
-            this.avalible = SerializationLibrary.deserializeProducts(avaliableSrc);
+            this.readers = SerializationLibrary.deserializeReaders(dirLoc + "/readers.ser");
+            this.deposite = SerializationLibrary.deserializeProducts(dirLoc + "/deposit.ser");
+            this.avalible = SerializationLibrary.deserializeProducts(dirLoc + "/avalible.ser");
         } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
     }
-
 
 }
