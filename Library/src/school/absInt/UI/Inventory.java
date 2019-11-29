@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.event.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,7 +13,6 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import school.absInt.Library;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 
 public class Inventory {
@@ -28,7 +28,7 @@ public class Inventory {
             String path = selectedDirectory.getAbsolutePath();
             System.out.println(path);
 
-            lib.serialization(path);
+            //lib.serialization(path);
         }
     }
 

@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.event.*;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,7 +14,6 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import school.absInt.Library;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 
 public class MainMenu extends Application {
