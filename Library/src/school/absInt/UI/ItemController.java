@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.event.*;
 import javafx.scene.control.Label;
 
-public class Item {
+public class ItemController {
     @FXML
     private Label labelNameOfBook;
 
@@ -15,7 +15,7 @@ public class Item {
     @FXML
     private Label labelYaerOfCreation;
 
-    public Item() {
+    public ItemController() {
         //labelNameOfAuthor = ;
     }
 

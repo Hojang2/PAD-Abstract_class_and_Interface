@@ -14,8 +14,20 @@ import javafx.stage.Stage;
 import school.absInt.Library;
 
 import java.io.File;
+import java.io.IOException;
 
-public class Inventory {
+public class InventoryController {
+
+    private Library lib;
+
+    InventoryController(Library LibraryClass){
+        this.lib = LibraryClass;
+    }
+
+    public void InitData(Library LibraryClass){
+        this.lib = LibraryClass;
+    }
+
     @FXML
     private void saveLib(ActionEvent event) throws Exception{
         DirectoryChooser dirChooserSave = new DirectoryChooser();
@@ -31,7 +43,6 @@ public class Inventory {
             //lib.serialization(path);
         }
     }
-
 
     @FXML
     private void closeApp(){

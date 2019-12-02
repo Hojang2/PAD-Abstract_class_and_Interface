@@ -1,7 +1,5 @@
 package school.absInt;
 
-import school.absInt.UI.MainMenu;
-
 public class Main {
 
     public static void main(String[] args) {

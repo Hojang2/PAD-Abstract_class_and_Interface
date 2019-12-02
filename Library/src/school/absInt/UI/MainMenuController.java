@@ -16,7 +16,7 @@ import school.absInt.Library;
 
 import java.io.File;
 
-public class MainMenu extends Application {
+public class MainMenuController extends Application {
     @FXML
     private Button buttonNewLib;
 
