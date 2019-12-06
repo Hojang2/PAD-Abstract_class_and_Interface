@@ -9,25 +9,30 @@ import javafx.event.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Pagination;
+import javafx.scene.control.TableView;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import school.absInt.Library;
 
 import java.io.File;
-import java.io.IOException;
 
 public class InventoryController {
 
     private Library lib;
 
+    @FXML
+    private Pagination InventoryPagination;
+
+    @FXML
+    private TableView InventoryTable;
+
     InventoryController(Library LibraryClass){
         this.lib = LibraryClass;
 
-        System.out.println();
-    }
+        System.out.println(lib);
 
-    public void InitData(Library LibraryClass){
-        this.lib = LibraryClass;
+
     }
 
     @FXML
