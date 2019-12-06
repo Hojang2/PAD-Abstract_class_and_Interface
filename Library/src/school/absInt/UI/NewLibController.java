@@ -31,13 +31,13 @@ public class NewLibController {
         Library lib = new Library(textNameOfLib.toString());
 
         try{
-            showInvnetory(lib);
+            showInvnetory(lib, event);
         }catch (Exception e){
             System.out.println(e);
         }
     }
 
-    private Stage showInvnetory(Library lib) throws IOException {
+    private Stage showInvnetory(Library lib, ActionEvent event) throws IOException {
 
         InventoryController invController = new InventoryController(lib);
 
@@ -49,8 +49,7 @@ public class NewLibController {
 
         loader.setController(invController);
 
-        Stage stage = new Stage(StageStyle.DECORATED);
-        stage.setTitle("Knihovna");
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(
                 new Scene(
                         (Pane) loader.load()
@@ -60,6 +59,7 @@ public class NewLibController {
         stage.show();
 
         return stage;
+
     }
 
     @FXML

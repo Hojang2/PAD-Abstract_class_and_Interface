@@ -22,6 +22,8 @@ public class InventoryController {
 
     InventoryController(Library LibraryClass){
         this.lib = LibraryClass;
+
+        System.out.println();
     }
 
     public void InitData(Library LibraryClass){
