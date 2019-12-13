@@ -23,9 +23,11 @@ import school.absInt.Library;
 import school.absInt.Template;
 
 import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class InventoryController {
+public class InventoryController{
 
     private Library lib;
 
@@ -55,19 +57,19 @@ public class InventoryController {
 
         System.out.println(lib);
 
+
+
+    }
+
+
+    public void init() {
         columnName.setCellValueFactory(new PropertyValueFactory<>("Name"));
         columnAuthor.setCellValueFactory(new PropertyValueFactory<>("Author"));
         columnPages.setCellValueFactory(new PropertyValueFactory<>("Pages"));
         columnISBN.setCellValueFactory(new PropertyValueFactory<>("ISBN"));
         columnDurability.setCellValueFactory(new PropertyValueFactory<>("Durability"));
-/*
-        Book b = new Book("Hobit", "J.R.R. Tolkien", 300, "978-80-257-1949-9", 40);
-
-        lib.addPublication(b);
 
         fillTable(10, 1);
-
- */
     }
 
     @FXML

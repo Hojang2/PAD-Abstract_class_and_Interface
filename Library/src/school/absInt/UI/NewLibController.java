@@ -30,11 +30,11 @@ public class NewLibController {
     private void createNewLib(ActionEvent event) throws Exception{
         Library lib = new Library(textNameOfLib.toString());
 
-        /*try{*/
+        try{
             showInvnetory(lib, event);
-        /*}catch (Exception e){
+        }catch (Exception e){
             System.out.println(e);
-        }*/
+        }
     }
 
     private Stage showInvnetory(Library lib, ActionEvent event) throws IOException {
@@ -57,6 +57,8 @@ public class NewLibController {
         );
 
         stage.show();
+
+        invController.init();
 
         return stage;
 
