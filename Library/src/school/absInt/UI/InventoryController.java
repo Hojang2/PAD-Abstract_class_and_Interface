@@ -10,10 +10,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Pagination;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import school.absInt.Library;
+import school.absInt.Template;
 
 import java.io.File;
 
@@ -25,7 +27,22 @@ public class InventoryController {
     private Pagination InventoryPagination;
 
     @FXML
-    private TableView InventoryTable;
+    private TableView<Template> InventoryTable;
+
+    @FXML
+    private TableColumn columnName;
+
+    @FXML
+    private TableColumn columnAuthor;
+
+    @FXML
+    private TableColumn columnPages;
+
+    @FXML
+    private TableColumn columnISBN;
+
+    @FXML
+    private TableColumn columnDurability;
 
     InventoryController(Library LibraryClass){
         this.lib = LibraryClass;
@@ -49,6 +66,10 @@ public class InventoryController {
 
             //lib.serialization(path);
         }
+    }
+
+    private void fillTable(){
+
     }
 
     @FXML
