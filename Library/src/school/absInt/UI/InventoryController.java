@@ -24,6 +24,7 @@ import school.absInt.Book;
 import school.absInt.Library;
 import school.absInt.Template;
 
+import javax.imageio.IIOException;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
@@ -71,6 +72,8 @@ public class InventoryController{
         columnISBN.setCellValueFactory(new PropertyValueFactory<>("ISBN"));
         columnDurability.setCellValueFactory(new PropertyValueFactory<>("Durability"));
 
+        InventoryPagination.setPageCount(lib.getDeposite().size()/10);
+
         fillTable(10, 1);
     }
 
@@ -108,7 +111,7 @@ public class InventoryController{
     }
 
     @FXML
-    private Stage addItem(ActionEvent event){
+    private Stage addItem(ActionEvent event) throws IIOException {
         ItemController itemController = new ItemController();
 
         FXMLLoader loader = new FXMLLoader(
@@ -133,7 +136,7 @@ public class InventoryController{
 
 
     @FXML
-    private Stage showReaders(ActionEvent event){
+    private Stage showReaders(ActionEvent event) throws IIOException{
         ReadersController readController = new ReadersController();
 
         FXMLLoader loader = new FXMLLoader(

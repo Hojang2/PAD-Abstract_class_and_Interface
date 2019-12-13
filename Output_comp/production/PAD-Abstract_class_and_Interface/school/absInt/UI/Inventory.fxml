@@ -32,9 +32,9 @@
    <right>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="118.0" BorderPane.alignment="CENTER">
          <children>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Add Item" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addItem" text="Add Item" />
             <Separator orientation="VERTICAL" prefHeight="20.0" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Readers" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showReaders" text="Readers" />
          </children></VBox>
    </right>
    <bottom>
