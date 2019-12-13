@@ -43,11 +43,11 @@
    <center>
       <TableView fx:id="InventoryTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="columnName" prefWidth="135.0" text="Název" />
-          <TableColumn fx:id="columnAuthor" prefWidth="148.0" text="Autor" />
-            <TableColumn fx:id="columnPages" prefWidth="58.0" text="Stran" />
-            <TableColumn fx:id="columnISBN" prefWidth="60.0" text="ISBN" />
-            <TableColumn fx:id="columnDurability" text="Stav" />
+          <TableColumn fx:id="columnName" editable="false" prefWidth="135.0" text="Název" />
+          <TableColumn fx:id="columnAuthor" editable="false" prefWidth="148.0" text="Autor" />
+            <TableColumn fx:id="columnPages" editable="false" prefWidth="58.0" text="Stran" />
+            <TableColumn fx:id="columnISBN" editable="false" prefWidth="60.0" text="ISBN" />
+            <TableColumn fx:id="columnDurability" editable="false" text="Stav" />
         </columns>
       </TableView>
    </center>
