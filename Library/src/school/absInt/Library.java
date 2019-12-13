@@ -64,6 +64,10 @@ public class Library{
         return tmp;
     }
 
+    public ArrayList<Template> getDeposite(){
+        return deposite;
+    }
+
     public String getLen(){
         String tmp = "";
         tmp += this.readers.size() + "\n";

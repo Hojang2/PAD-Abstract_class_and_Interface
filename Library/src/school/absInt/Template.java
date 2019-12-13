@@ -27,5 +27,23 @@ public abstract class Template implements  Repair, Lend, Serializable{
         return String.format("name: %s author: %s pages: %d durability: %d", name, author, pages, durability);
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public int getDurability() {
+        return durability;
+    }
 }
