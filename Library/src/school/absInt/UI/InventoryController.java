@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.event.*;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,6 +17,7 @@ import javafx.scene.control.Pagination;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import school.absInt.Book;
@@ -103,6 +105,55 @@ public class InventoryController{
 
         ObservableList<Template> depositList = FXCollections.observableArrayList(depositeArrayListEdited);
         InventoryTable.setItems(depositList);
+    }
+
+    @FXML
+    private Stage addItem(ActionEvent event){
+        ItemController itemController = new ItemController();
+
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource(
+                        "Inventory.fxml"
+                )
+        );
+
+        loader.setController(itemController);
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(
+                new Scene(
+                        (Pane) loader.load()
+                )
+        );
+
+        stage.show();
+
+        return stage;
+    }
+
+
+    @FXML
+    private Stage showReaders(ActionEvent event){
+        ReadersController readController = new ReadersController();
+
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource(
+                        "Inventory.fxml"
+                )
+        );
+
+        loader.setController(readController);
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(
+                new Scene(
+                        (Pane) loader.load()
+                )
+        );
+
+        stage.show();
+
+        return stage;
     }
 
     @FXML
