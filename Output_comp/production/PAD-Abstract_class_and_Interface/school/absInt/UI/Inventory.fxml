@@ -6,10 +6,12 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" >
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -35,7 +37,18 @@
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Readers" />
          </children></VBox>
    </right>
+   <bottom>
+      <Pagination fx:id="InventoryPagination" prefHeight="64.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
    <center>
-      <Pagination prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <TableView fx:id="InventoryTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="columnName" editable="false" prefWidth="135.0" text="Název" />
+          <TableColumn fx:id="columnAuthor" editable="false" prefWidth="148.0" text="Autor" />
+            <TableColumn fx:id="columnPages" editable="false" prefWidth="58.0" text="Stran" />
+            <TableColumn fx:id="columnISBN" editable="false" prefWidth="60.0" text="ISBN" />
+            <TableColumn fx:id="columnDurability" editable="false" text="Stav" />
+        </columns>
+      </TableView>
    </center>
 </BorderPane>
